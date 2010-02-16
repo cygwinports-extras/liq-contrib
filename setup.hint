@@ -1,0 +1,4 @@
+category: Audio
+requires: liquidsoap
+sdesc: "Liquidsoap helper scripts"
+ldesc: "Liquidsoap helper scripts"

@@ -1,0 +1,17 @@
+DESCRIPTION="Liquidsoap helper scripts"
+HOMEPAGE="http://savonet.sourceforge.net/"
+SRC_URI="mirror://sourceforge/savonet/${P}.tar.gz"
+
+src_compile() { :; }
+
+src_install() {
+	cd ${S}
+	dodir /usr/bin
+	export LIQ_BIN=/usr/bin/liquidsoap
+	./install.sh --install ${D}/usr/bin
+
+	for x in ${D}/usr/bin/*
+	do
+		newman ${PN}.1 ${x##*/}.1
+	done
+}
